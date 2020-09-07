@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="main">
     <Heart :percentage="percentage" :start="0"/>
-    <button @click="percentage+=8">test</button>
+    <b-form-input v-model="text" placeholder="Entrez votre prénom"></b-form-input>
   </div>
 </template>
 
@@ -9,6 +9,7 @@
 
 
 import Heart from "@/components/Heart.vue";
+
 export default {
   name: 'home',
   components: {Heart},
@@ -21,3 +22,14 @@ export default {
   }
 };
 </script>
+
+<style>
+.main {
+  width: fit-content;
+  margin: auto;
+}
+
+body {
+  background-color: #ebc9fd;
+}
+</style>
