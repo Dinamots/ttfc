@@ -1,7 +1,9 @@
 <template>
   <div class="main">
     <Heart :percentage="percentage" :heartbeat="heartbeat" :circle="circle"/>
-    <b-form-input @change="startConfetti()" placeholder="Entrez votre prénom"></b-form-input>
+    <b-form-input v-if="!circle" v-model="name" @change="startConfetti()" placeholder="Entrez votre prénom"></b-form-input>
+    <span v-if="circle"> {{name}} vous êtes à {{percentage}}% Rieglerette ! </span>
+
   </div>
 
 
@@ -51,7 +53,8 @@ export default {
     return {
       percentage: 0,
       heartbeat: true,
-      circle: false
+      circle: false,
+      name: ""
     }
   },
   created() {
@@ -67,5 +70,14 @@ export default {
 
 body {
   background-color: #ebc9fd;
+}
+
+div input {
+  margin-top: 15px;
+}
+
+div span {
+  font-size: larger;
+  font-family: "Segoe UI Semibold",serif;
 }
 </style>
