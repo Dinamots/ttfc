@@ -22,9 +22,13 @@ export default {
       //@ts-ignore
       this.$confetti.start()
       this.love()
+      //@ts-ignore
       this.circle = true
+      //@ts-ignore
       this.heartbeat = false
+      //@ts-ignore
       this.percentage = Math.floor(Math.random() * 100)
+      //@ts-ignore
       console.log(this.circle)
     },
     stopConfetti() {
